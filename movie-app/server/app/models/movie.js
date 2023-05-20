@@ -13,6 +13,7 @@ const movieSchema = new mongoose.Schema(
     poster: {
       type: String,
     },
+
     trailer: {
       type: String,
     },
