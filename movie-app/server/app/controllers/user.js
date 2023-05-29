@@ -28,32 +28,6 @@ exports.getOneUser = async (req, res) => {
   }
 };
 
-exports.createUser = async (req, res) => {
-  try {
-    console.log(req.body);
-    const { firstName, lastName, email, password } = req.body;
-    // controll and validation
-    if (!(firstName && lastName && email && password)) {
-      return res.status(409).send("All inputs are required");
-    }
-
-    const user = new User({
-      firstName,
-      lastName,
-      email,
-      password,
-    });
-
-    const saved_user = await user.save();
-    res.status(201).json({
-      msg: "Create with succes",
-      data: saved_user,
-    });
-  } catch (err) {
-    res.status(500).send(err.message);
-  }
-};
-
 exports.updateOneUser = async (req, res) => {
   try {
     const { id } = req.params;
