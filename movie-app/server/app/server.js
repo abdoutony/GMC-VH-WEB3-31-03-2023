@@ -3,12 +3,19 @@ require("dotenv").config();
 require("./config/db").connect();
 const apiRoutes = require("./routes");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT;
 
 //set body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// set up cors
+// const corsOptions = {
+//   origin: "http://example.com",
+// };
+app.use(cors());
 
 // configure public and uploads
 app.use(express.static(__dirname + "/public"));

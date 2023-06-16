@@ -5,6 +5,7 @@ import MoviesPage from "./pages/movies";
 import NotFoundPage from "./pages/404";
 import CounterPage from "./pages/counter";
 import CounterPage2 from "./pages/counter2";
+import DetailsPage from "./pages/details";
 function App() {
   return (
     <Router>
@@ -13,6 +14,7 @@ function App() {
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/counter" element={<CounterPage />} />
         <Route path="/counter2" element={<CounterPage2 />} />
+        <Route path="/movies/:id" element={<DetailsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>

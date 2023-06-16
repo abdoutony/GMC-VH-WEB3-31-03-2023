@@ -3,10 +3,11 @@ export default function useFetch(url) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const baseUrl = "http://localhost:4500";
   const fetchData = async (url) => {
     try {
       setLoading(true);
-      const res = await fetch(url);
+      const res = await fetch(baseUrl + url);
       const data = await res.json();
       setData(data);
       setLoading(false);
