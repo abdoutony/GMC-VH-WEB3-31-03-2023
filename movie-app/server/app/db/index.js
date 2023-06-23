@@ -4,9 +4,9 @@ const User = require("../models/user");
 const moviesData = require("./data/movies.json");
 const usersData = require("./data/users.json");
 require("dotenv").config();
-const { MONGO_DEV_URL } = process.env;
+const { MONGO_PROD_URL } = process.env;
 mongoose
-  .connect(MONGO_DEV_URL, {
+  .connect(MONGO_PROD_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
